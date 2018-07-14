@@ -1,0 +1,9 @@
+itemGroup.NyaCraft=Nya Craft
+tile.nyacraft.BlockNyaOre.name=彩虹矿石
+item.nyacraft.ItemNyaIngot.name=彩虹锭
+item.nyacraft.ItemNyaPickaxe.name=彩虹稿
+item.nyacraft.ItemNyaSword.name=彩虹剑
+tile.nyacraft.BlockNyaBlock.name=彩虹块
+item.nyacraft.ItemNyaShovel.name=彩虹铲
+item.nyacraft.ItemNyaAxe.name=彩虹斧
+enchantment.veinPick=连锁采集

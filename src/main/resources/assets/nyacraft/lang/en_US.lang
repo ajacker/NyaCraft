@@ -1,0 +1,9 @@
+itemGroup.NyaCraft=Nya Craft
+tile.nyacraft.BlockNyaOre.name=Nya Ore
+item.nyacraft.ItemNyaIngot.name=Nya Ingot
+item.nyacraft.ItemNyaPickaxe.name=Nya Pickaxe
+item.nyacraft.ItemNyaSword.name=Nya Sword
+tile.nyacraft.BlockNyaBlock.name=Nya Block
+item.nyacraft.ItemNyaShovel.name=Nya Shovel
+item.nyacraft.ItemNyaAxe.name=Nya Axe
+enchantment.veinPick=Vein Picke
