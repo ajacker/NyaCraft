@@ -8,6 +8,7 @@ public class ItemLoader {
     public static ItemNyaSword nyaSword = new ItemNyaSword();
     public static ItemNyaShovel nyaShovel = new ItemNyaShovel();
     public static ItemNyaAxe nyaAxe = new ItemNyaAxe();
+    public static ItemNyaHoe nyaHoe = new ItemNyaHoe();
 
     public ItemLoader(FMLPreInitializationEvent event) {
         nyaIngot.init();
@@ -15,6 +16,7 @@ public class ItemLoader {
         nyaSword.init();
         nyaShovel.init();
         nyaAxe.init();
+        nyaHoe.init();
         System.out.println("载入物品");
     }
 
@@ -24,6 +26,7 @@ public class ItemLoader {
         nyaSword.setTextureName("nyacraft:nya_sword");
         nyaShovel.setTextureName("nyacraft:nya_shovel");
         nyaAxe.setTextureName("nyacraft:nya_axe");
+        nyaHoe.setTextureName("nyacraft:nya_hoe");
         System.out.println("载入物品材质");
 
     }
