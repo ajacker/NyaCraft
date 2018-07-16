@@ -4,6 +4,7 @@ import ajacker.nyacraft.blocks.BlockLoader;
 import ajacker.nyacraft.creativetab.CreativeTabsLoader;
 import ajacker.nyacraft.enchantment.EnchantmentLoader;
 import ajacker.nyacraft.items.ItemLoader;
+import ajacker.nyacraft.network.NetWorkLoader;
 import ajacker.nyacraft.worldgen.WorldGeneratorLoader;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -16,6 +17,7 @@ public class CommonProxy {
         new BlockLoader(event);//载入方块
         new ItemLoader(event);//载入物品
         new WorldGeneratorLoader();//生成矿物
+        new NetWorkLoader(event);//注册网络事件
     }
 
     public void init(FMLInitializationEvent event) {

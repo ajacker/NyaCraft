@@ -1,6 +1,7 @@
 package ajacker.nyacraft.blocks;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
 public class BlockLoader {

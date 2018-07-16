@@ -22,4 +22,5 @@ public class ItemNyaSword extends ItemSword {
     public void init() {
         GameRegistry.registerItem(this, ItemId);//注册物品
     }
+
 }

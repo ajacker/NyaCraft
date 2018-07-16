@@ -7,6 +7,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
@@ -49,7 +50,7 @@ public class BlocksBreaker {
 
                 }
             } else {//能精准采集就掉方块
-                ItemStack item = new ItemStack(nowblock.getItem(world, pos.x, pos.y, pos.z));
+                ItemStack item = new ItemStack(Item.getItemFromBlock(nowblock));
                 world.spawnEntityInWorld(new EntityItem(world, pos.x, pos.y, pos.z, item));///掉落物品
             }
 

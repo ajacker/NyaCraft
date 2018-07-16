@@ -11,7 +11,7 @@ import static ajacker.nyacraft.NyaCraft.MODID;
 
 public class ItemNyaArmor extends ItemArmor {
     public static final ItemArmor.ArmorMaterial NYAINGOT =
-            EnumHelper.addArmorMaterial("nya",800,new int[]{3,10,5,2},30);//金甲25
+            EnumHelper.addArmorMaterial("nya",40,new int[]{3,10,5,2},30);//金甲25
     public ItemNyaArmor(int type) {
         super(NYAINGOT, 4, type);
     }

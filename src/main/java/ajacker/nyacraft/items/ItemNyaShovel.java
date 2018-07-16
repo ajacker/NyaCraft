@@ -12,7 +12,7 @@ import static ajacker.nyacraft.NyaCraft.MODID;
 public class ItemNyaShovel extends ItemSpade {
     public static final String ItemId = "ItemNyaShovel";
     public static final Item.ToolMaterial NYAINGOT = EnumHelper.addToolMaterial("NYAINGOT",
-            1, 800, 24.0F, 0.0F, 25);
+            1, 800, 20.0F, 0.0F, 25);
 
     public ItemNyaShovel() {
         super(NYAINGOT);

@@ -1,6 +1,8 @@
 package ajacker.nyacraft.api;
 
 import ajacker.nyacraft.blocks.BlockPos;
+import ajacker.nyacraft.network.MessageVeinBlockCount;
+import ajacker.nyacraft.network.NetWorkLoader;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.ChatComponentText;
@@ -13,6 +15,7 @@ import java.util.List;
 public class VeinBlockCounter {
     public static List<BlockPos> blocks;
     public static int limit=1024;
+    public static int count;
     public static List<BlockPos> count(World world, int X, int Y, int Z, EntityPlayerMP player, Block aim) {
         List<BlockPos> blocks = new ArrayList<BlockPos>();
         List<BlockPos> done = new ArrayList<BlockPos>();
@@ -62,6 +65,10 @@ public class VeinBlockCounter {
                 blocks.remove(0);
             }
         }
+        count=done.size();//count=连锁的方块数
+        MessageVeinBlockCount message=new MessageVeinBlockCount();
+        message.VeinBlockCount= count;
+        NetWorkLoader.instance.sendTo(message,player);//发送消息同步客户端和服务端的count数量
         return done;
     }
 
