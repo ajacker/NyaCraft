@@ -11,7 +11,7 @@ import static ajacker.nyacraft.NyaCraft.MODID;
 public class ItemNyaAxe extends ItemAxe {
     public static final String ItemId = "ItemNyaAxe";
     public static final Item.ToolMaterial NYAINGOT = EnumHelper.addToolMaterial("NYAINGOT",
-            1, 800, 24.0F, 0.0F, 16);
+            1, 800, 24.0F, 0.0F, 25);
 
     public ItemNyaAxe() {
         super(NYAINGOT);

@@ -11,7 +11,7 @@ import static ajacker.nyacraft.NyaCraft.MODID;
 public class ItemNyaHoe extends ItemHoe {
     public static final String ItemId = "ItemNyaHoe";
     public static final Item.ToolMaterial NYAINGOT = EnumHelper.addToolMaterial("NYAINGOT",
-            1, 800, 24.0F, 0.0F, 16);
+            1, 800, 24.0F, 0.0F, 25);
     public ItemNyaHoe() {
         super(NYAINGOT);
         this.setCreativeTab(CreativeTabsLoader.tabFMLTutor);//创造模式标签页

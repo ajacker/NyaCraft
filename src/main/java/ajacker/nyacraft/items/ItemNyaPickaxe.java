@@ -12,7 +12,7 @@ import static ajacker.nyacraft.NyaCraft.MODID;
 public class ItemNyaPickaxe extends ItemPickaxe {
     public static final String ItemId = "ItemNyaPickaxe";
     public static final Item.ToolMaterial NYAINGOT = EnumHelper.addToolMaterial("NYAINGOT",
-            3, 800, 24.0F, 0.0F, 16);
+            3, 800, 24.0F, 0.0F, 25);
 
     public ItemNyaPickaxe() {
         super(NYAINGOT);

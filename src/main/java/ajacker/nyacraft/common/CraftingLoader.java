@@ -59,6 +59,46 @@ public class CraftingLoader {
                 " *#",
                 " * ",
                 '#', ItemLoader.nyaIngot, '*', Items.stick);//彩虹斧的合成方式
+        GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.nyaHoe, 1),
+                "## ",
+                        " * ",
+                        " * ",
+                '#', ItemLoader.nyaIngot, '*', Items.stick);//彩虹锄的合成方式
+        GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.nyaHoe, 1),
+                " ##",
+                        " * ",
+                        " * ",
+                '#', ItemLoader.nyaIngot, '*', Items.stick);//彩虹锄的合成方式
+        GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.nyaHelmet, 1),
+                "###",
+                        "# #",
+                        "   ",
+                '#', ItemLoader.nyaIngot);//彩虹头盔的合成方式
+        GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.nyaHelmet, 1),
+                "   ",
+                        "###",
+                        "# #",
+                '#', ItemLoader.nyaIngot);//彩虹头盔的合成方式
+        GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.nyaChestplate, 1),
+                "# #",
+                        "###",
+                        "###",
+                '#', ItemLoader.nyaIngot);//彩虹胸甲的合成方式
+        GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.nyaLeggings, 1),
+                "###",
+                        "# #",
+                        "# #",
+                '#', ItemLoader.nyaIngot);//彩虹护腿的合成方式
+        GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.nyaBoots, 1),
+                "   ",
+                        "# #",
+                        "# #",
+                '#', ItemLoader.nyaIngot);//彩虹靴子的合成方式
+        GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.nyaBoots, 1),
+                "# #",
+                        "# #",
+                        "   ",
+                '#', ItemLoader.nyaIngot);//彩虹靴子的合成方式
         GameRegistry.addShapedRecipe(new ItemStack(BlockLoader.nyaBlock, 1),
                 "###",
                 "###",

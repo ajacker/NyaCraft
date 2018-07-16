@@ -58,7 +58,7 @@ public class EventLoader {
         if(VeinBlockCounter.blocks==null || VeinBlockCounter.blocks.isEmpty()) return;//没有连锁就返回
         int count=VeinBlockCounter.blocks.size();
         if (count>=30) count=30;//最多减三十倍
-        event.newSpeed=event.originalSpeed/count;
+        event.newSpeed=event.originalSpeed/(float)(count*0.8);//新的挖掘速度等于原速度减少0.8*count倍
     }
     @SubscribeEvent
     public void onBlockDroped(BlockEvent.HarvestDropsEvent event) {

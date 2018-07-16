@@ -9,6 +9,11 @@ public class ItemLoader {
     public static ItemNyaShovel nyaShovel = new ItemNyaShovel();
     public static ItemNyaAxe nyaAxe = new ItemNyaAxe();
     public static ItemNyaHoe nyaHoe = new ItemNyaHoe();
+    public static ItemNyaArmor.Helmet nyaHelmet=new ItemNyaArmor.Helmet();
+    public static ItemNyaArmor.Chestplate nyaChestplate=new ItemNyaArmor.Chestplate();
+    public static ItemNyaArmor.Leggings nyaLeggings=new ItemNyaArmor.Leggings();
+    public static ItemNyaArmor.Boots nyaBoots=new ItemNyaArmor.Boots();
+
 
     public ItemLoader(FMLPreInitializationEvent event) {
         nyaIngot.init();
@@ -17,6 +22,10 @@ public class ItemLoader {
         nyaShovel.init();
         nyaAxe.init();
         nyaHoe.init();
+        nyaHelmet.init();
+        nyaChestplate.init();
+        nyaLeggings.init();
+        nyaBoots.init();
         System.out.println("载入物品");
     }
 
@@ -27,6 +36,10 @@ public class ItemLoader {
         nyaShovel.setTextureName("nyacraft:nya_shovel");
         nyaAxe.setTextureName("nyacraft:nya_axe");
         nyaHoe.setTextureName("nyacraft:nya_hoe");
+        nyaHelmet.setTextureName("nyacraft:nya_helmet");
+        nyaChestplate.setTextureName("nyacraft:nya_chestplate");
+        nyaLeggings.setTextureName("nyacraft:nya_leggings");
+        nyaBoots.setTextureName("nyacraft:nya_boots");
         System.out.println("载入物品材质");
 
     }
