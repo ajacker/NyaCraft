@@ -16,11 +16,11 @@ public class WorldGeneratorNyaOre extends WorldGenerator {
     @Override
     public boolean generate(World world, Random rand, int x, int y, int z) {
         if (TerrainGen.generateOre(world, rand, this, x, z, OreGenEvent.GenerateMinable.EventType.CUSTOM)) {
-            for (int i = 0; i < 3; ++i) {
+            for (int i = 0; i < 6; ++i) {
                 int posX = x + rand.nextInt(16);
                 int posY = 6 + rand.nextInt(10);
                 int posZ = z + rand.nextInt(16);
-                System.out.println("生成矿物"+posX+","+posY+","+posZ);
+                //System.out.println("生成矿物"+posX+","+posY+","+posZ);
                 BiomeGenBase biomeGenBase = world.getBiomeGenForCoords(posX, posZ);
                 if (biomeGenBase.getIntRainfall() < rand.nextInt(65536)) {
                     nyaoreGenerator.generate(world, rand, posX, posY, posZ);

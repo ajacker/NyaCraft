@@ -17,6 +17,7 @@ public class CommonProxy {
         new BlockLoader(event);//载入方块
         new ItemLoader(event);//载入物品
         new WorldGeneratorLoader();//生成矿物
+        new OreDictionaryLoader();//注册矿物字典
         new NetWorkLoader(event);//注册网络事件
     }
 

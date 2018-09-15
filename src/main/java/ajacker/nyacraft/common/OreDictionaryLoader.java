@@ -1,6 +1,8 @@
 package ajacker.nyacraft.common;
 
+import ajacker.nyacraft.blocks.BlockLoader;
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -8,7 +10,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OreDictionaryLoader {
-    public static List<ItemStack> logWood;
+    public OreDictionaryLoader(){
+        OreDictionary.registerOre("oreRedstone", Blocks.lit_redstone_ore);
+        OreDictionary.registerOre("oreRedstone", new ItemStack(Blocks.lit_redstone_ore));
+        OreDictionary.registerOre("oreNya",BlockLoader.nyaOre);
+        OreDictionary.registerOre("blockNya",BlockLoader.nyaBlock);
+    }
+    public static boolean contains(String[] list, ItemStack itemStack) {
+        for (String dictName : list) {
+            //System.out.println(item.getDisplayName() + "-" + itemStack.getDisplayName());
+            int id[]=OreDictionary.getOreIDs(itemStack);
+            for (int i:id) {
+                String name=OreDictionary.getOreName(i);
+                if (name.equals(dictName))
+                    return true;
+            }
+        }
+        return false;
+    }
+}
+    /*public static List<ItemStack> logWood;
     public static List<ItemStack> woodRubber;
     public static List<ItemStack> oreQuartz;
     public static List<ItemStack> oreCoal;
@@ -114,7 +135,7 @@ public class OreDictionaryLoader {
 
     public static boolean contains(List<ItemStack> list, ItemStack itemStack) {
         for (ItemStack item : list) {
-            System.out.println(item.getDisplayName() + "-" + itemStack.getDisplayName());
+            //System.out.println(item.getDisplayName() + "-" + itemStack.getDisplayName());
             if (item.getDisplayName().equals(itemStack.getDisplayName())) return true;
         }
         return false;
@@ -124,4 +145,4 @@ public class OreDictionaryLoader {
         if (instance == null) instance = new OreDictionaryLoader();
         return instance;
     }
-}
+}*/

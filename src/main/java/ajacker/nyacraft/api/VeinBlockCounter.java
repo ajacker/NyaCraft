@@ -4,6 +4,7 @@ import ajacker.nyacraft.blocks.BlockPos;
 import ajacker.nyacraft.network.MessageVeinBlockCount;
 import ajacker.nyacraft.network.NetWorkLoader;
 import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
@@ -16,7 +17,7 @@ public class VeinBlockCounter {
     public static List<BlockPos> blocks;
     public static int limit=1024;
     public static int count;
-    public static List<BlockPos> count(World world, int X, int Y, int Z, EntityPlayerMP player, Block aim) {
+    public static List<BlockPos> count(World world, int X, int Y, int Z, EntityPlayer player, Block aim) {
         List<BlockPos> blocks = new ArrayList<BlockPos>();
         List<BlockPos> done = new ArrayList<BlockPos>();
         Block block = world.getBlock(X, Y, Z);
@@ -66,9 +67,9 @@ public class VeinBlockCounter {
             }
         }
         count=done.size();//count=连锁的方块数
-        MessageVeinBlockCount message=new MessageVeinBlockCount();
-        message.VeinBlockCount= count;
-        NetWorkLoader.instance.sendTo(message,player);//发送消息同步客户端和服务端的count数量
+        //MessageVeinBlockCount message=new MessageVeinBlockCount();
+        //message.VeinBlockCount= count;
+        //NetWorkLoader.instance.sendTo(message,player);//发送消息同步客户端和服务端的count数量
         return done;
     }
 

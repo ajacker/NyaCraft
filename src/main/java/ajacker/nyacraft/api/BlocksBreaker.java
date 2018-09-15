@@ -6,6 +6,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -18,7 +19,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class BlocksBreaker {
-    public static void breakBlocks(List<BlockPos> blocks, World world, EntityPlayerMP player) {
+    public static void breakBlocks(List<BlockPos> blocks, World world, EntityPlayer player) {
         int fortune = EnchantmentHelper.getEnchantmentLevel(Enchantment.fortune.effectId, player.getHeldItem());//时运等级
         int silktouch = EnchantmentHelper.getEnchantmentLevel(Enchantment.silkTouch.effectId, player.getHeldItem());//精准采集等级
         int firstmeta = world.getBlockMetadata(blocks.get(0).x, blocks.get(0).y, blocks.get(0).z);//获取第一个的方块数据
@@ -33,7 +34,7 @@ public class BlocksBreaker {
             MinecraftForge.EVENT_BUS.post(breakEvent);//发送事件-破坏方块
             if (breakEvent.isCanceled()) return;//如果事件被取消了就啥都不做
             world.setBlockToAir(pos.x, pos.y, pos.z);//删除方块
-            System.out.println("破坏方块:x=" + pos.x + ",y=" + pos.y + ",z=" + pos.z);
+            //System.out.println("破坏方块:x=" + pos.x + ",y=" + pos.y + ",z=" + pos.z);
             //nowblock.dropBlockAsItem(world,pos.x, pos.y, pos.z,meta,0);//掉地上
             if (silktouch == 0 || !canSilkHarvest) {//不能精准采集或者没有精准采集附魔就掉物品
                 ArrayList<ItemStack> itemlist = nowblock.getDrops(world, pos.x, pos.y, pos.z, meta, fortune);//获取挖掘所掉落的物品
@@ -41,10 +42,11 @@ public class BlocksBreaker {
                 int i = 0;
                 for (ItemStack item : itemlist) {//遍历掉落的物品
                     i++;//记录一共掉落了多少物品
-                    System.out.print(i);
-                    System.out.println(item.getDisplayName());
+                    //System.out.print(i);
+                    //System.out.println(item.getDisplayName());
                     world.spawnEntityInWorld(new EntityItem(world, pos.x, pos.y, pos.z, item));///掉落物品
-                    world.spawnEntityInWorld(new EntityXPOrb(world, pos.x, pos.y, pos.z, xpdroped));//刷经验球
+                    if(xpdroped!=0)
+                        world.spawnEntityInWorld(new EntityXPOrb(world, pos.x, pos.y, pos.z, xpdroped));//刷经验球
                     //player.entityDropItem(item,1);//掉在玩家身上
                     //if(!player.inventory.addItemStackToInventory(item))//如果放不进背包
 
@@ -55,5 +57,6 @@ public class BlocksBreaker {
             }
 
         }
+		VeinBlockCounter.count=0;
     }
 }

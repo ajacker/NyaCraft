@@ -104,6 +104,11 @@ public class CraftingLoader {
                 "###",
                 "###",
                 '#', ItemLoader.nyaIngot);//彩虹块的合成方式
+        GameRegistry.addShapedRecipe(new ItemStack(ItemLoader.nyaIngot, 9),
+                "#  ",
+                "   ",
+                "   ",
+                '#', BlockLoader.nyaBlock);//彩虹块的分解方式				
         System.out.println("载入合成配方");
     }
 
